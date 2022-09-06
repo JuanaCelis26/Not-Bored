@@ -3,12 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.346" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.346" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_terms_and_conditions.xml" value="0.335" />
         <entry key="app/src/main/res/layout/prueba.xml" value="0.1" />
+=======
+<<<<<<< HEAD
+        <entry key="app/src/main/res/drawable/line_style.xml" value="0.2205" />
+        <entry key="app/src/main/res/layout/activity_activities.xml" value="0.33229166666666665" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33229166666666665" />
+=======
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
+>>>>>>> 9c6a3ce91312839c1e5cb9abe59c4b6f13ac7857
+>>>>>>> 4c26a173cef59b5c3d360156a1eae0ef234ae8a5
       </map>
     </option>
   </component>

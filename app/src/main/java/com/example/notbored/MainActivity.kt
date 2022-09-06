@@ -1,22 +1,22 @@
 package com.example.notbored
 
 import android.content.Intent
-import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
+import android.os.Bundle
+import com.example.notbored.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-        val termAndConditionsTv= findViewById<TextView>(R.id.tv_TermsAndConditions)
-        termAndConditionsTv.setOnClickListener {
-        val intent= Intent(this, TermAndConditions::class.java)
-        startActivity(intent)
-        }
+        setContentView(binding.root)
+        binding.btStart.setOnClickListener { val i = Intent(this, Activities::class.java)
+        startActivity(i)}
+
+        binding.tvTermsAndConditions.setOnClickListener {val i = Intent(this, TermAndConditions::class.java)
+        startActivity(i)}
 
     }
 }
