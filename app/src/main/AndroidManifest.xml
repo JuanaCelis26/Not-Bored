@@ -26,8 +26,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TermAndConditions">
+        <activity android:name=".TermAndConditions"
+            android:exported="false"
+            >
             </activity>
+
+        <activity android:name=".Activities"
+            android:exported="false"
+            >
+        </activity>
     </application>
 
 </manifest>
