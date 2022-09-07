@@ -1,5 +1,6 @@
 package com.example.notbored
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
@@ -17,20 +18,35 @@ class Activities : AppCompatActivity(), ClickItem  {
         super.onCreate(savedInstanceState)
         binding = ActivityActivitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val btnRandom = binding.btnRandom
+
         getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        val listAtivities = listOf<String>("Education","Recreational","Social","Diy", "Charity","Cooking", "Relaxation","Music","BusyWork")
 
-        val list = listOf<String>("Education","Recreational","Social","Diy", "Charity","Cooking", "Relaxation","Music","BusyWork")
-
-        adapter = AdapterActivities(list, this)
+        adapter = AdapterActivities(listAtivities, this)
         binding.rvActivities.layoutManager = LinearLayoutManager(this)
         binding.rvActivities.adapter = adapter
 
+        btnRandom.setOnClickListener {
+            makeIntent(listAtivities.random())
+        }
+
     }
 
-    override fun clickItem(item: String) {
-        Toast.makeText(this, item, Toast.LENGTH_SHORT).show()
+    override fun clickItem(itemActivity: String) {
+        makeIntent(itemActivity)
+    }
+
+    fun makeIntent (typeActivities : String) {
+        var numParticipants = intent.getStringExtra("numParticipants")
+       val irASuggestions = Intent (this, SuggestionsActivity::class.java)
+
+        irASuggestions.putExtra("numParticipants",numParticipants.toString())
+        irASuggestions.putExtra("typeActivities", typeActivities)
+        startActivity(irASuggestions)
+
     }
 
 }

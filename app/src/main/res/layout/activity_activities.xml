@@ -35,6 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/btnRandom"
                 android:layout_width="37dp"
                 android:layout_height="27dp"
                 android:layout_gravity="right"
