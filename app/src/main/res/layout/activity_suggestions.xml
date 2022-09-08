@@ -84,6 +84,7 @@
         tools:text="Medium" />
 
     <Button
+        android:id="@+id/btnTryAgain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
