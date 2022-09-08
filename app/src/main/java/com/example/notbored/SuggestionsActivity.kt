@@ -18,8 +18,13 @@ class SuggestionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val numParticipants = intent.getStringExtra("numParticipants")?.toInt()
+        val typeActivities = intent.getStringExtra("typeActivities")?.lowercase()
+
+        search(getEndPoint(numParticipants,typeActivities))
+
         binding.btnTryAgain.setOnClickListener {
-            search("activity")
+            search( getEndPoint(numParticipants,typeActivities))
         }
     }
 
@@ -31,15 +36,12 @@ class SuggestionsActivity : AppCompatActivity() {
     }
 
     private fun search(query:String){
-        val numParticipants = intent.getStringExtra("numParticipants")?.toInt()
-        val typeActivities = intent.getStringExtra("typeActivities")?.lowercase()
-        Toast.makeText(this, numParticipants.toString(), Toast.LENGTH_SHORT).show()
-        var type = "recreational"
         CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(APIService::class.java).getRequest("$query/?participants=$numParticipants&type=$typeActivities")
+            val call = getRetrofit().create(APIService::class.java).getRequest(query)
             val respuesta = call.body()
             runOnUiThread {
                 if (call.isSuccessful) {
+                    binding.tvActivity.text = respuesta?.activity ?:"No hay :("
                     val actividad  = respuesta?.activity?: ":("
                     val participantes = respuesta?.participants?: "0"
                     println(actividad+" "+participantes + " "+respuesta?.type )
@@ -54,5 +56,21 @@ class SuggestionsActivity : AppCompatActivity() {
     }
     private fun showEroor(){
         Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
+    }
+    private fun getEndPoint(numParticipants: Int?, typeActivities: String?):String{
+        return when{
+            numParticipants != 0 && !typeActivities.equals("random") ->{
+                "activity/?participants=$numParticipants&type=$typeActivities"
+            }
+            numParticipants == 0 && typeActivities.equals("random") ->{
+                "activity/"
+            }
+            numParticipants == 0 ->{
+                "activity/?type=$typeActivities"
+            }
+            else -> {
+                "activity/?participants=$numParticipants"
+            }
+        }
     }
 }

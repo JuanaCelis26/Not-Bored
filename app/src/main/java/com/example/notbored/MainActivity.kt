@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             var number = etParticipantsNum.text.toString()
             if(etParticipantsNum.text.isEmpty() || etParticipantsNum.text.equals("0") ){
-                val random = (0..8).random()
-                number = random.toString()
+                number = 0.toString()
             }
 
             val i = Intent(this, Activities::class.java)

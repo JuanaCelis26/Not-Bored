@@ -30,7 +30,7 @@ class Activities : AppCompatActivity(), ClickItem  {
         binding.rvActivities.adapter = adapter
 
         btnRandom.setOnClickListener {
-            makeIntent(listAtivities.random())
+            makeIntent("random")
         }
 
     }
