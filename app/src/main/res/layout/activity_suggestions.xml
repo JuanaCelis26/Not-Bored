@@ -6,6 +6,51 @@
     android:layout_height="match_parent"
     android:background="@color/light_blue"
     tools:context=".SuggestionsActivity">
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvSuggestionsHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Activities"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnArrow"
+                android:layout_width="50dp"
+                android:layout_height="49dp"
+                android:layout_gravity="right"
+                android:src="@drawable/arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvSuggestionsHead"
+                app:layout_constraintHorizontal_bias="0.424"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.507" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvActivity"
@@ -17,17 +62,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171"
-        android:text="Learn how to play a new sport" />
+        app:layout_constraintVertical_bias="0.249"
+        tools:text="Correr en el parque" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvParticipantsSuggestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
-        android:text="Participant"
+        android:text=" Participant"
         android:drawableLeft = "@drawable/person"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,50 +82,52 @@
         app:layout_constraintTop_toBottomOf="@+id/tvActivity" />
 
     <TextView
+        android:id="@+id/tvNumParticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        tools:text="3" />
+        app:layout_constraintStart_toEndOf="@+id/tvParticipantsSuggestions"
+        app:layout_constraintTop_toTopOf="@+id/tvParticipantsSuggestions" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Price"
+        android:text=" Price"
         android:drawableLeft="@drawable/currency_dollar"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/tvParticipantsSuggestions"
+        app:layout_constraintTop_toBottomOf="@+id/tvParticipantsSuggestions" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvCategoryActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Recreational"
+        tools:text=" Recreational"
         android:drawableLeft="@drawable/list"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/tvPrice"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/tvPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+        />
 
     <TextView
+        android:id="@+id/tvCategoryPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/tvPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice"
         app:layout_constraintVertical_bias="1.0"
         tools:text="Medium" />
 
