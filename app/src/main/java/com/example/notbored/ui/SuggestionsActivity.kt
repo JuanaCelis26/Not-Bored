@@ -73,9 +73,7 @@ class SuggestionsActivity : AppCompatActivity() {
                     binding.tvCategoryActivity.text = response?.type
                     val price = response?.price
                     price?.let { binding.tvCategoryPrice.text = calculatePrice(it) }
-                    //mostrar
                 } else {
-                    //error
                     showError()
                 }
             }
