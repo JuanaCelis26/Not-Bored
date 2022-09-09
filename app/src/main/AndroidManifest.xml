@@ -16,10 +16,10 @@
         android:theme="@style/Theme.NotBored"
         tools:targetApi="31">
         <activity
-            android:name=".SuggestionsActivity"
+            android:name=".ui.SuggestionsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,12 +28,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TermAndConditions"
+        <activity android:name=".ui.TermAndConditions"
             android:exported="false"
             >
             </activity>
 
-        <activity android:name=".Activities"
+        <activity android:name=".ui.Activities"
             android:exported="false"
             >
         </activity>

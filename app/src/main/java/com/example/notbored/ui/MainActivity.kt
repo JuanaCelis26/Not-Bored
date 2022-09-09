@@ -1,10 +1,13 @@
-package com.example.notbored
+package com.example.notbored.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.notbored.databinding.ActivityMainBinding
+
+/**
+ * This activity accesses the terms and conditions screen and the activities screen, with btnStart and tvTermsAndConditions.
+ **/
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,19 +18,22 @@ class MainActivity : AppCompatActivity() {
 
         val etParticipantsNum = binding.etNumberParticipants
         val btnStart = binding.btStart
-
+        val tvTermAndConditions = binding.tvTermsAndConditions
+/**
+ * In addition, this activity receives the number of participants entered by the user and stores it in the var numParticipants
+ **/
         btnStart.setOnClickListener {
-            var number = etParticipantsNum.text.toString()
+            var numParticipants = etParticipantsNum.text.toString()
             if(etParticipantsNum.text.isEmpty() || etParticipantsNum.text.equals("0") ){
-                number = 0.toString()
+                numParticipants = "0"
             }
 
             val i = Intent(this, Activities::class.java)
-            i.putExtra("numParticipants", number)
+            i.putExtra("numParticipants", numParticipants)
             startActivity(i)
         }
 
-        binding.tvTermsAndConditions.setOnClickListener {val i = Intent(this, TermAndConditions::class.java)
+        tvTermAndConditions.setOnClickListener {val i = Intent(this, TermAndConditions::class.java)
         startActivity(i)}
 
     }

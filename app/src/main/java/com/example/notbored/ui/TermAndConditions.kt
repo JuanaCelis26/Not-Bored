@@ -1,8 +1,14 @@
-package com.example.notbored
+package com.example.notbored.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.notbored.R
+
+/**
+ * The TermsAndCondition activity displays the Terms and Conditions and has a button to close the activity
+ * It was decided to use findViewById because the buttonClose button is only used once
+ **/
 
 
 class TermAndConditions : AppCompatActivity() {
